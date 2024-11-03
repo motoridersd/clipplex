@@ -129,7 +129,7 @@ class Snapshot:
         self.fps = int(fps)
 
     def _download_frames(self):
-        cmd = f"ffmpeg -ss {self.time} -i '"{self.media_path}"' -vframes {self.fps} -qscale:v 2 {MEDIA_STATIC_PATH}/images/{self.time.replace(':','_')}_%03d.jpg"
+        cmd = f"ffmpeg -ss {self.time} -i '"'{self.media_path}'"' -vframes {self.fps} -qscale:v 2 {MEDIA_STATIC_PATH}/images/{self.time.replace(':','_')}_%03d.jpg"
         a = subprocess.call(cmd, shell=True, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
 
 class Video:
